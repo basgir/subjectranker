@@ -1,7 +1,8 @@
 ##############################################
 #  Name: Subject line analyzer
 #  Author: skyr__
-#  Date : 03.12.2013
+#  Date : 03.12.2019
+#  Update : 04.12.2019
 ##############################################
 import requests
 import argparse
@@ -19,6 +20,7 @@ if __name__ == "__main__":
     if args.source == "1":
         # We setup the API url
         url = 'https://www.subjectline.com/Home/SubmitSubjectLine'
+
         # Setup the request
         data = requests.post(url, data={'txtSubjectLine': args.subjectline})
 
@@ -33,9 +35,9 @@ if __name__ == "__main__":
 
     elif args.source == "2":
 
-        
         # We setup the API url
         url = 'http://emailsubjectlinegrader.com/home/analyze'
+
         # Setup the request
         data = requests.get(url, params={'text': args.subjectline}).json()
 
@@ -68,8 +70,4 @@ if __name__ == "__main__":
         print(np.mean(score_list))
 
     else:
-        print("Error please check your requests")
-
-
-    
-    
+        print("Error please check your requests")    
